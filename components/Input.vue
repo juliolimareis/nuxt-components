@@ -51,13 +51,14 @@
 </template>
 
 <script lang="ts" setup>
-// import { defineProps, } from "vue";
+import { ref, onMounted, onUpdated, } from "vue";
 
 const _value = ref("");
 const _isError = ref(false);
 const _showHelperText = ref(false);
 
 const props = defineProps<{
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   onChange?:(value: string, event: any) => void;
   variant?: string;
   id?: string;
@@ -70,10 +71,14 @@ const props = defineProps<{
   disabled?: boolean;
   showHelperText?: boolean;
   helperText?: string;
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   onBlur?: (value: string, event: any) => void;
   validateWithOnBlur?: boolean;
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   validateWhen?: (value: string) => boolean;
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   validate?: (value: string) => boolean;
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   onValidate?: (isError: boolean) => void;
   validateOnUpdate?: boolean;
   blockPaste?: boolean;
@@ -85,7 +90,7 @@ onMounted(() => {
 });
 
 function _onValidate () {
-  if (props.onValidate && props.validate && a) {
+  if (props.onValidate && props.validate) {
     let error = true;
 
     if (props.validate(_value.value)) {

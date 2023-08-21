@@ -26,6 +26,8 @@
 </template>
 
 <script lang="ts" setup>
+import { onMounted, ref, } from "vue";
+
 const props = defineProps<{
   size?: "sm" | "md" | "lg"
 }>();

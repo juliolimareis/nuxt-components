@@ -40,10 +40,12 @@
 </template>
 
 <script lang="ts" setup>
+import { ref, } from "vue";
 import { Switch, } from "@headlessui/vue";
 
 const props = defineProps<{
   value?: boolean,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   onChange?:(value: boolean) => void,
 }>();
 
